@@ -18,12 +18,8 @@ public class EventRegistrationRepository {
 	@Transactional
 	public Participant createParticipant(String name) {
 		Participant participant = new Participant();
-		RegistrationManager rm = new RegistrationManager();
-		rm.setId(1);
-		participant.setRegistrationManager(rm);
 		participant.setName(name);
 		entityManager.persist(participant);
-		entityManager.persist(rm);
 		return participant;
 	}
 
