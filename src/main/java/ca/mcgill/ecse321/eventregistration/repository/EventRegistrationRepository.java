@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.mcgill.ecse321.eventregistration.model.Participant;
+import ca.mcgill.ecse321.eventregistration.model.RegistrationManager;
 
 @Repository
 public class EventRegistrationRepository {
@@ -17,6 +18,9 @@ public class EventRegistrationRepository {
 	@Transactional
 	public Participant createParticipant(String name) {
 		Participant participant = new Participant();
+		RegistrationManager rm = new RegistrationManager();
+		rm.setId(1);
+		participant.setRegistrationManager(rm);
 		participant.setName(name);
 		entityManager.persist(participant);
 		return participant;
