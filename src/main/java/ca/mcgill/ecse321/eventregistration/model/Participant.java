@@ -6,17 +6,17 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Participant{
-//   private RegistrationManager registrationManager;
+   private RegistrationManager registrationManager;
    
-//   @ManyToOne(optional=false)
-//   public RegistrationManager getRegistrationManager() {
-//      return this.registrationManager;
-//   }
-//   
-//   public void setRegistrationManager(RegistrationManager registrationManager) {
-//      this.registrationManager = registrationManager;
-//   }
-//   
+   @ManyToOne(optional=true)
+   public RegistrationManager getRegistrationManager() {
+      return this.registrationManager;
+   }
+   
+   public void setRegistrationManager(RegistrationManager registrationManager) {
+      this.registrationManager = registrationManager;
+   }
+   
    private String name;
 
 public void setName(String value) {
